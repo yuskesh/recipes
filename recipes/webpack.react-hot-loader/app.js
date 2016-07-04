@@ -1,7 +1,7 @@
 /**
  * Require Browsersync along with webpack and middleware for it
  */
-var browserSync = require('browser-sync');
+var browserSync = require('browser-sync').create();
 var webpack = require('webpack');
 var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpackHotMiddleware = require('webpack-hot-middleware');
@@ -15,7 +15,7 @@ var bundler = webpack(webpackConfig);
 /**
  * Run Browsersync and use middleware for Hot Module Replacement
  */
-browserSync({
+browserSync.init({
     server: {
       baseDir: 'app',
 
